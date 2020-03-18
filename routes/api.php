@@ -19,10 +19,14 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('user', 'Controller\User\UserController');
+Route::get('user-useraddresses/{id}', 'Controller\User\UserController@');
+Route::get('user-products/{id}', 'Controller\User\UserController@');
 
 Route::resource('product', 'Controller\Product\ProductController');
 
 Route::resource('commune', 'Controller\Commune\CommuneController');
+Route::get('commune-province/{id}', 'Controller\Commune\CommuneController@province');
+Route::get('commune-useraddresses/{id}', 'Controller\Commune\CommuneController@userAddresses');
 
 Route::resource('province', 'Controller\Province\ProvinceController');
 

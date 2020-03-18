@@ -55,7 +55,7 @@ class Commune extends Model
         return $this->belongsTo(Province::class);
     }
 
-    public function userAddress()
+    public function userAddresses()
     {
         return $this->hasMany(UserAddress::class);
     }

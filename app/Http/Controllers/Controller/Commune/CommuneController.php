@@ -85,4 +85,28 @@ class CommuneController extends ApiController
         $commune->delete();
         return $this->showOne($commune);
     }
+
+    /**
+     * Display the specified cross resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function province($id)
+    {
+        $province = Commune::findOrFail($id)->province;
+        return $this->showOne($province);
+    }
+
+    /**
+     * Display the specified cross resource in storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function userAddresses($id)
+    {
+        $userAddresses = Commune::findOrFail($id)->userAddresses;
+        return $this->showAll($userAddresses);
+    }
 }

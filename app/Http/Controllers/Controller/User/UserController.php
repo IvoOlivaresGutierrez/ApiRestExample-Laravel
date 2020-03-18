@@ -92,4 +92,28 @@ class UserController extends ApiController
         $user->delete();
         return $this->showOne($user);
     }
+
+    /**
+     * Display the specified cross resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function products($id)
+    {
+        $user = User::findOrFail($id);
+        return $this->showAll($user);
+    }
+
+    /**
+     * Display the specified cross resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function userAddresses($id)
+    {
+        $userAddresses = User::findOrFail($id)->userAddresses;
+        return $this->showAll($userAddresses);
+    }
 }

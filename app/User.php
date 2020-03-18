@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Inicio de relaciones eloquent
+
+    // Fin de relaciones eloquent
 }
